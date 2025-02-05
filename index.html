@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8edeb;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    #message, #flower {
+      display: none;
+    }
+
+    #touchText {
+      font-size: 2rem;
+      color: #ff6f61;
+      cursor: pointer;
+      background: #ffffff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #message {
+      font-size: 1.8rem;
+      color: #d62828;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 200px;
+      margin-top: 20px;
+      animation: bloom 1s ease-in-out;
+    }
+
+    @keyframes bloom {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="touchText" onclick="revealSurprise()">Touch to see</div>
+
+  <div id="surprise">
+    <img id="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Red_Rose.JPG/1024px-Red_Rose.JPG" alt="Rose">
+    <div id="message">I love you Annu, my laado❤, my baby 🥺, my girl ❤, my everything ❤.</div>
+  </div>
+
+  <script>
+    function revealSurprise() {
+      document.getElementById('touchText').style.display = 'none';
+      document.getElementById('flower').style.display = 'block';
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
