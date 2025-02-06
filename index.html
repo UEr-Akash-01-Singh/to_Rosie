@@ -11,81 +11,135 @@
       align-items: center;
       flex-direction: column;
       min-height: 100vh;
-      background-color: #1e1e2f;
+      background-color: #2f2f2f;
       font-family: 'Arial', sans-serif;
       text-align: center;
-      color: orange;
+      color: white;
     }
 
-    #message, #flower, #pictures {
+    .message-box {
       display: none;
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      color: orange;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out forwards;
     }
 
-    #touchText {
+    #tapText {
       font-size: 2rem;
-      color: #ff6f61;
+      color: orange;
       cursor: pointer;
       background: white;
       padding: 10px 20px;
       border-radius: 12px;
       box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .popup-box {
-      margin: 15px;
-      padding: 15px;
-      border: 2px solid red;
-      background: white;
-      color: orange;
-      font-weight: bold;
+      margin-top: 20px;
     }
 
     img {
       max-width: 200px;
-      margin: 10px;
+      margin: 20px;
+      border-radius: 10px;
+      display: none;
+      animation: scaleIn 1s ease-in-out forwards;
     }
 
     #finalMessage {
+      font-size: 2rem;
       color: pink;
       font-weight: bold;
-      font-size: 2rem;
-      margin-top: 30px;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 <body>
-  <div id="touchText" onclick="revealSurprise()">Tap to See</div>
+  <div id="tapText" onclick="revealMessages()">Tap to see</div>
+
+  <div id="message1" class="message-box">Hey Baby👋🏻🙋🏻</div>
+  <div id="message2" class="message-box">
+    I love you❤️, I have loved you only 🩵, I will love you only💚 Every moment💞, Every second❣️, In every Universe💓, Always and in All ways💕
+  </div>
+  <div id="message3" class="message-box">
+    I know there is a thing called distance🥺, in between us Now. But your CS Engineer at least could do this🫂.
+  </div>
 
   <div id="surprise">
-    <div class="popup-box">Hey Baby 👋🏻🙋🏻</div>
-    <div class="popup-box" style="background: lightpink;">
-      I love you ❤️, I have loved you only 🩵, I will love you only 💚 Every moment 💞, Every second ❣️, In every Universe 💓, Always and in All ways 💕.
-    </div>
-    <div class="popup-box" style="background: lightgreen;">
-      I know there is a thing called distance 🥺, in between us now. But your CS Engineer at least could do this 🫂.
-    </div>
-    
-    <div id="flower">
-      <img src="img1.jpg" alt="Image 1">
-      <img src="img2.jpg" alt="Image 2">
-      <img src="img3.jpg" alt="Image 3">
-      <img src="img4.jpg" alt="Image 4">
-      <img src="img5.jpg" alt="Image 5">
-    </div>
+    <img id="image1" src="Rod_Rose.JPG" alt="First Rose">
+    <img id="image2" src="img1.jpg" alt="Image 1">
+    <img id="image3" src="img2.jpg" alt="Image 2">
+    <img id="image4" src="img3.jpg" alt="Image 3">
+    <img id="image5" src="img4.jpg" alt="Image 4">
+    <img id="image6" src="img5.jpg" alt="Image 5">
+  </div>
 
-    <div id="message">
-      My princess 🫰🏻, my Queen 👑, my Shona 😘, my jaana 🫂, my praan 🧿, my everything ❤️.
-    </div>
-
-    <div id="finalMessage">I LOVE YOU BABY 🫰🏻🌺🩷</div>
+  <div id="finalMessage" class="message-box" style="display: none;">
+    I LOVE YOU BABY 🫰🏻🌺🩷
   </div>
 
   <script>
-    function revealSurprise() {
-      document.getElementById('touchText').style.display = 'none';
-      document.getElementById('surprise').style.display = 'block';
-      document.getElementById('flower').style.display = 'block';
-      document.getElementById('message').style.display = 'block';
+    function revealMessages() {
+      document.getElementById('tapText').style.display = 'none';
+
+      setTimeout(() => {
+        document.getElementById('message1').style.display = 'block';
+      }, 1000);
+
+      setTimeout(() => {
+        document.getElementById('message2').style.display = 'block';
+      }, 3000);
+
+      setTimeout(() => {
+        document.getElementById('message3').style.display = 'block';
+      }, 5000);
+
+      setTimeout(() => {
+        document.getElementById('image1').style.display = 'block';
+      }, 7000);
+
+      setTimeout(() => {
+        document.getElementById('image2').style.display = 'block';
+      }, 9000);
+
+      setTimeout(() => {
+        document.getElementById('image3').style.display = 'block';
+      }, 11000);
+
+      setTimeout(() => {
+        document.getElementById('image4').style.display = 'block';
+      }, 13000);
+
+      setTimeout(() => {
+        document.getElementById('image5').style.display = 'block';
+      }, 15000);
+
+      setTimeout(() => {
+        document.getElementById('image6').style.display = 'block';
+      }, 17000);
+
+      setTimeout(() => {
+        document.getElementById('finalMessage').style.display = 'block';
+      }, 19000);
     }
   </script>
 </body>
