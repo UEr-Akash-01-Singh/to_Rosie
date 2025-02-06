@@ -7,16 +7,14 @@
   <style>
     body {
       display: flex;
+      flex-direction: column; /* Changed to column for vertical arrangement */
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #f8edeb;
+      min-height: 100vh; /* Use min-height to ensure full viewport height */
+      background-color: #f0ecec; /* Slightly darker background */
       font-family: 'Arial', sans-serif;
       text-align: center;
-    }
-
-    #message, #flower {
-      display: none;
+      margin: 0; /* Remove default margins */
     }
 
     #touchText {
@@ -27,18 +25,40 @@
       padding: 10px 20px;
       border-radius: 12px;
       box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px; /* Added margin */
     }
 
-    #message {
-      font-size: 1.8rem;
-      color: #d62828;
-      margin-top: 20px;
+    .message-box {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
     }
 
-    img {
+    #message1 {
+      color: red;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #message2 {
+      color: orange;
+      background-color: #ffe5e5; /* Light pink */
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #message3 {
+      color: orange;
+      background-color: #e6f4ea; /* Light green */
+      font-weight: bold;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #flower {
       max-width: 200px;
       margin-top: 20px;
       animation: bloom 1s ease-in-out;
+      display: none; /* Initially hidden */
     }
 
     @keyframes bloom {
@@ -49,22 +69,70 @@
         transform: scale(1);
       }
     }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      max-width: 200px;
+      height: auto;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #finalMessage {
+      font-size: 2rem; /* Larger font size */
+      color: pink;
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+    }
   </style>
 </head>
 <body>
+
   <div id="touchText" onclick="revealSurprise()">Touch to see</div>
 
-  <div id="surprise">
+  <div class="message-box" id="message1" style="display:none;">Hey Baby👋🏻🙋🏻</div>
+
+  <div class="message-box" id="message2" style="display:none;">I love you❤️ , I have loved you only 🩵, I will love you only💚 Every moment💞, Every second❣️,In every Universe💓,Always and in All ways💕</div>
+
+  <div class="message-box" id="message3" style="display:none;"><strong>I know there is a thing called distance🥺, in between us Now.But your Cs Engineer atleast could do this🫂.</strong></div>
+
+  <div id="surprise" style="display:none;">
     <img id="flower" src="Red_Rose.JPG" alt="Rose">
-    <div id="message">I love you Annu, my laado❤️, my baby 🥺, my girl ❤️, my everything ❤️.</div>
+    <div id="message" style="color: orange; font-size: 1.8rem; margin-top: 20px;">I love you Annu, my princess 🫰🏻, my Queen 👑 , my Shona 😘, my jaana🫂 , my praan 🧿, my laado❤️, my baby 🥺, my girl ❤️, my everything ❤️.</div>
   </div>
+
+
+  <div class="image-gallery" style="display:none;">
+    <img src="img1.jpg" alt="Image 1">
+    <img src="img2.jpg" alt="Image 2">
+    <img src="img3.jpg" alt="Image 3">
+    <img src="img4.jpg" alt="Image 4">
+    <img src="img5.jpg" alt="Image 5">
+  </div>
+
+  <div id="finalMessage" style="display:none;">I LOVE YOU BABY 🫰🏻🌺🩷</div>
+
 
   <script>
     function revealSurprise() {
       document.getElementById('touchText').style.display = 'none';
+      document.getElementById('message1').style.display = 'block';
+      document.getElementById('message2').style.display = 'block';
+      document.getElementById('message3').style.display = 'block';
+      document.getElementById('surprise').style.display = 'block';
       document.getElementById('flower').style.display = 'block';
-      document.getElementById('message').style.display = 'block';
+      document.querySelector('.image-gallery').style.display = 'flex'; // Show images
+      document.getElementById('finalMessage').style.display = 'block';
     }
   </script>
+
 </body>
 </html>
